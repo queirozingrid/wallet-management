@@ -1,9 +1,12 @@
 package main
 
 import (
-	"fmt"
+	"wallet-management/database"
+
+	_ "github.com/lib/pq"
 )
 
 func main() {
-	fmt.Println("HELLO, WORLD!")
+	db := database.ConnectDB()
+	defer db.Close()
 }
